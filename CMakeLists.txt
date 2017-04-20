@@ -32,6 +32,9 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries(hiberlite Threads::Threads)
 
+# add dl library
+target_link_libraries(hiberlite ${CMAKE_DL_LIBS})
+
 install(TARGETS hiberlite DESTINATION lib)
 install(FILES ${hiberlite_HEADERS} DESTINATION include)
 
